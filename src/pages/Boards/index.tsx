@@ -30,7 +30,7 @@ const Home = () => {
 	return (
 		<>
 			<DragDropContext onDragEnd={(result: any) => onDragEnd(result, columns, setColumns)}>
-				<div className="w-full flex items-start justify-between px-5 pb-8 md:gap-0 gap-10">
+				<div className="w-full flex items-start justify-between px-5 pb-8 md:gap-0 gap-10 ">
 					{Object.entries(columns).map(([columnId, column]: any) => (
 						<div
 							className="w-full flex flex-col gap-0"
