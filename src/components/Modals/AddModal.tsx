@@ -97,7 +97,6 @@ const AddModal: React.FC<AddModalProps> = ({
         onClick={closeModal}
       ></div>
       <div className="md:w-[30vw] w-[90%] bg-white rounded-lg shadow-md z-50 flex flex-col items-center gap-3 px-5 py-6">
-        {/* Display error message if errorMessage is truthy */}
         {errorMessage && <div className="text-red-500">{errorMessage}</div>}
 
         <input
