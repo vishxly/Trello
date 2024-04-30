@@ -22,7 +22,7 @@ This is a task management application built using React and TypeScript. It allow
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/task-management-app.git
+   git clone https://github.com/yadavvshall/Trello
 
 2. Install dependencies:
     ```bash
