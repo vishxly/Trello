@@ -1,4 +1,5 @@
 export type TaskT = {
+	column: unknown;
 	id: string;
 	title: string;
 	description: string;
