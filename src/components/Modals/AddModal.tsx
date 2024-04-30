@@ -97,11 +97,9 @@ const AddModal: React.FC<AddModalProps> = ({
         onClick={closeModal}
       ></div>
       <div className="md:w-[30vw] w-[90%] bg-white rounded-lg shadow-md z-50 flex flex-col items-center gap-3 px-5 py-6">
-        {errorMessage && (
-          <div className={`text-red-500 ${errorMessage ? "block" : "hidden"}`}>
-            {errorMessage}
-          </div>
-        )}
+        {/* Display error message if errorMessage is truthy */}
+        {errorMessage && <div className="text-red-500">{errorMessage}</div>}
+
         <input
           type="text"
           name="title"
@@ -110,13 +108,17 @@ const AddModal: React.FC<AddModalProps> = ({
           placeholder="Title"
           className="w-full h-12 px-3 outline-none rounded-md bg-slate-100 border border-slate-300 text-sm font-medium"
         />
-        <textarea
-          name="description"
-          value={taskData.description}
-          onChange={handleChange}
-          placeholder="Description"
-          className="w-full h-24 px-3 outline-none rounded-md bg-slate-100 border border-slate-300 text-sm font-medium resize-none"
-        />
+
+        <div className="relative w-full h-36">
+          <textarea
+            name="description"
+            value={taskData.description}
+            onChange={handleChange}
+            placeholder="Description"
+            className="absolute inset-0 w-full h-full px-3 outline-none rounded-md bg-slate-100 border border-slate-300 text-sm font-medium resize-none overflow-y-auto"
+          />
+        </div>
+
         <select
           name="column"
           value={taskData.column}
@@ -130,6 +132,7 @@ const AddModal: React.FC<AddModalProps> = ({
             </option>
           ))}
         </select>
+
         <button
           className="w-full rounded-md h-9 bg-slate-500 text-amber-50 font-medium"
           onClick={handleSubmit}

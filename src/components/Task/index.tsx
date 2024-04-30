@@ -36,6 +36,7 @@ const Task = ({ task, provided, onEdit }: TaskProps) => {
       {...provided.draggableProps}
       {...provided.dragHandleProps}
       className="w-full cursor-grab bg-[#fff] flex flex-col justify-between gap-3 items-start shadow-sm rounded-xl px-3 py-4"
+      style={{ overflow: "hidden" }} // Ensure content stays within the card
     >
       {image && alt && (
         <img src={image} alt={alt} className="w-full h-[170px] rounded-lg" />
@@ -65,12 +66,18 @@ const Task = ({ task, provided, onEdit }: TaskProps) => {
             value={editedTask.description}
             onChange={handleChange}
             className="text-[13.5px] text-gray-500 w-full"
+            style={{ maxHeight: "100px", overflowY: "auto" }} // Limit height and enable vertical scroll
           />
         </>
       ) : (
-        <div className="w-full flex items-start flex-col gap-0">
+        <div
+          className="w-full flex items-start flex-col gap-0"
+          style={{ overflow: "hidden" }}
+        >
           <span className="text-[15.5px] font-medium text-[#555]">{title}</span>
-          <span className="text-[13.5px] text-gray-500">{description}</span>
+          <div className="h-[100px] overflow-y-auto">
+            <span className="text-[13.5px] text-gray-500">{description}</span>
+          </div>
         </div>
       )}
       <div className="w-full border border-dashed"></div>

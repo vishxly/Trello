@@ -20,7 +20,7 @@ export const Board: Columns = {
           { title: "Test", ...getRandomColors() },
           { title: "Front", ...getRandomColors() },
         ],
-        column: "todo", // Add the column property
+        column: "todo", 
       },
     ],
   },
@@ -37,7 +37,7 @@ export const Board: Columns = {
           { title: "Test", ...getRandomColors() },
           { title: "Front", ...getRandomColors() },
         ],
-        column: "doing", // Add the column property
+        column: "doing", 
       },
       {
         id: uuidv4(),
@@ -49,7 +49,7 @@ export const Board: Columns = {
           { title: "Test", ...getRandomColors() },
           { title: "Front", ...getRandomColors() },
         ],
-        column: "doing", // Add the column property
+        column: "doing", 
       },
     ],
   },
