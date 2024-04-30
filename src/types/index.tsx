@@ -1,20 +1,20 @@
 export type TaskT = {
-	column: unknown;
-	id: string;
-	title: string;
-	description: string;
-	priority: string;
-	deadline: number;
-	image?: string;
-	alt?: string;
-	tags: { title: string; bg: string; text: string }[];
+  column: string;
+  id: string;
+  title: string;
+  description: string;
+  priority: string;
+  deadline: number;
+  image?: string;
+  alt?: string;
+  tags: { title: string; bg: string; text: string }[];
 };
 
 type Column = {
-	name: string;
-	items: TaskT[];
+  name: string;
+  items: TaskT[];
 };
 
 export type Columns = {
-	[key: string]: Column;
+  [key: string]: Column;
 };
